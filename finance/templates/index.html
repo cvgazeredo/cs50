@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Symbols</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Current Price</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for row in transactions %}
+          <tr>
+            <td>{{ row["symbol"] }}</td>
+            <td>{{ row["totalShares"] }}</td>
+            {% for row2 in current_balance %}
+              {% if current_balance[row2].symbol == row["symbol"] %}
+                <td>{{ current_balance[row2].price | usd }}</td>
+                <td>{{ current_balance[row2].total | usd }}</td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+        {% endfor %}
+
+
+
+  </tbody>
+  </tbody>
+  </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Wallet Total Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>{{ user_cash | usd }}</td>
+            </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

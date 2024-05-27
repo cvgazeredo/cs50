@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table>
+    <tr>
+      <th>|| Stocks </th>
+      <th>|| Shares </th>
+      <th>|| Sold Price </th>
+
+      <th>|| Total ||</th>
+    </tr>
+        {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction["symbol"] }}</td>
+                    <td>{{ transaction["shares"] }}</td>
+                    <td>{{ transaction["price"] | usd }}</td>
+                    <td>{% if transaction["type"] == 'true' %}
+                                <div>Buy</div>
+                            {% else %}
+                                <div>Sold</div>
+                            {% endif %}</td>
+                </tr>
+        {% endfor %}
+</table>
+{% endblock %}

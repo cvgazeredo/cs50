@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Track My Mood
+{% endblock %}
+
+{% block main %}
+<style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+</style>
+<!-- Custom styles for this template -->
+<link href="form-validation.css" rel="stylesheet">
+
+<div class="container">
+  <main>
+    <div class="row justify-content-md-center">
+    <div class="col-md-4 col-lg-7">
+
+      <img class="d-block mx-auto mb-8" src="static/ico.png" alt="" width="72" height="57">
+      <h2>Track My Mood</h2>
+      <p class="lead">How are you feeling today?</p>
+      <br/>
+      <div class="col-md-7 col-lg-8">
+        <form action="/trackmymood" method="post">
+          <hr class="my-2">
+          <div class="col-md-auto">
+            <label for="mood" class="form-label">I'm feeling</label>
+            <select class="form-select" name="mood" id="mood" required>
+              <option value="">Choose...</option>
+              <option value="happy">Happy</option>
+              <option value="normal">Regular</option>
+              <option value="sad">Sad</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a mood.
+            </div>
+          </div>
+      <hr class="my-2">
+      <div class="col-md-auto">
+        <label for="sleep" class="form-label">My hours of sleep last night was</label>
+        <select class="form-select" name="sleep" id="sleep" required>
+          <option value="">Choose...</option>
+          <option value="good">7 to 8 hours</option>
+          <option value="decent">6 to 7 hours</option>
+          <option value="poor">Less than 6 hours</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select hours of sleep.
+        </div>
+      </div>
+      <hr class="my-2">
+      <div class="col-md-auto">
+      <label for="exercise" class="form-label">I have exercised myself</label>
+      <select class="form-select" name="exercise" id="exercise" required>
+      <option value="">Choose...</option>
+      <option value="yes">For about 1 hour</option>
+      <option value="medium">30 minutes to one hour</option>
+      <option value="no">I haven't done any exercise</option>
+      </select>
+      <div class="invalid-feedback">
+      Please select exercise.
+      </div>
+      </div>
+      <hr class="my-2">
+      <div class="col-md-auto">
+      <label for="eating" class="form-label">Today my diet was based on</label>
+      <select class="form-select" name="eating" id="eating" required>
+      <option value="">Choose...</option>
+      <option value="yes">Enough amount of protein, carbs, fibers, fruits, vegetables and etc</option>
+      <option value="medium">Regular amount of protein, fibers, fruits, vegetables and etc</option>
+      <option value="no">No fiber, fruits, vegetables and healthy ingridients</option>
+      </select>
+      <div class="invalid-feedback">
+      Please select a mood.
+      </div>
+      </div>
+      <hr class="my-2">
+      <br/>
+      <button class="w-30 btn btn-primary btn-lg" type="submit">Submit my answers</button>
+      </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

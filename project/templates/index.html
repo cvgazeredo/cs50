@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="static/tm6.png" class="bd-placeholder-img" alt="..." width="100%" height="100%" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Create a mood chart for yourself</h1>
+                <p>This mood chart has information on your mood, hours of sleep, and eating habits. Most people use mood charts to understand how their moods fluctuate, and also to recognize the influence of mood on other behaviors, such as sleep, energy, and eating.</p>
+                <p><a class="btn btn-lg btn-primary" href="/trackmymood">Track My Mood</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
+            <img src="static/tm5.png" class="bd-placeholder-img" alt="..." width="100%" height="100%" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Your mental health is important.</h1>
+                <p>mental.help gives you a tool to help you improve it.</p>
+                <p><a class="btn btn-lg btn-primary" href="/about">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Monitoring your mood: <span class="text-muted">Discover why a mood chart could help you.</span></h2>
+            <p class="lead">A mood tracker is a tool that is used to keep a record of a person's mood at regular intervals. The purpose of this type of tool is to help look for patterns in how moods vary over time and due to different situations and circumstances.
+
+            </p>
+          </div>
+          <div class="col-md-5">
+            <img src="static/mental.helppic.png" class="img-thumbnail" alt="..." width="500" height="500" role="img">
+
+          </div>
+        </div>
+
+
+{% endblock %}
